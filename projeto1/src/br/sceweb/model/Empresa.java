@@ -34,8 +34,14 @@ public class Empresa {
 		return nomeDaEmpresa;
 	}
 
-	public void setNomeDaEmpresa(String nomeDaEmpresa) {
-		this.nomeDaEmpresa = nomeDaEmpresa;
+	public String setNomeDaEmpresa(String nomeDaEmpresa) {
+		String msg="";
+		if(!nomeDaEmpresa.equals("")){
+			this.nomeDaEmpresa = nomeDaEmpresa;
+		}else{
+			msg = "Nome em branco";
+		}
+		return msg;
 	}
 
 	public String getNomeFantasia() {
@@ -58,8 +64,14 @@ public class Empresa {
 		return telefone;
 	}
 
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
+	public String setTelefone(String telefone) {
+		String msg="";
+		if(!telefone.equals("")){
+			this.telefone = telefone;
+		}else{
+			msg = "Telefone em branco";
+		}
+		return msg;
 	}
 	/*
 	 * valida o cnpj

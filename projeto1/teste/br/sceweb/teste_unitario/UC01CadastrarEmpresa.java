@@ -51,6 +51,7 @@ public class UC01CadastrarEmpresa {
 		String url = "jdbc:mysql://localhost/sceweb";
 		assertEquals(1,empresaDAO.adiciona(empresa));
 	}
+	//assertEqual(Resultado esperado, Resultado obtido)
 	
 	@Test
 	public void CT02UC01FBCadastra_cnpj_invalido() {
@@ -63,6 +64,17 @@ public class UC01CadastrarEmpresa {
 		empresaDAO.adiciona(empresa);
 		assertEquals(0,empresaDAO.adiciona(empresa));
 		
+	}
+	@Test
+	public void CT04UC01FBCadastra_nome_vazio(){
+		empresaDAO = new EmpresaDAO(configuraDB);
+		assertEquals("Nome em branco", empresa.setNomeDaEmpresa(""));
+	}
+	
+	@Test
+	public void CT05UC01FBCadastra_telefone_vazio(){
+		empresaDAO = new EmpresaDAO(configuraDB);
+		assertEquals("Telefone em branco", empresa.setTelefone(""));
 	}
 	
 	@After
